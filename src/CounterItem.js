@@ -1,6 +1,9 @@
 import React from 'react';
 import { Pressable, Text, TextInput, StyleSheet, View } from 'react-native';
-import { MoneyFormat } from 'sahuarito/src/utils/helpers';
+
+function MoneyFormat(value){
+  return "$"+String(value).replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+}
 
 function MinusButton({onPressHandler}) {
   return (
