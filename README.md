@@ -11,11 +11,20 @@ npm install react-native-cash-counter
 ## Usage
 
 ```js
-import { multiply } from 'react-native-cash-counter';
+import { Counter, useCounter } from "react-native-cash-counter"
 
-// ...
 
-const result = await multiply(3, 7);
+function MyWrapComponent(){
+    const [denominations, setDenominations, total] = useCounter()
+    return  (
+        <Text>Total: ${total}</Text>
+        <Counter 
+            denominations={denominations} 
+            setDenominations={setDenominations}
+        />
+    )
+}
+
 ```
 
 ## Contributing
